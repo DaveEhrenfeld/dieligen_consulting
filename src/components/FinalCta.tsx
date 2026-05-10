@@ -32,7 +32,9 @@ export function FinalCta() {
         </p>
         <div className="reveal mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">
           <a
-            href="mailto:hola@dieligen.cl?subject=Quiero%20agendar%20una%20llamada"
+            href="https://calendly.com/davehrenfe/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-amber inline-flex items-center gap-2 px-10 py-5 rounded-sm font-semibold text-base"
           >
             Agendar llamada gratuita →
