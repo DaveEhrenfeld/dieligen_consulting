@@ -1,0 +1,64 @@
+const metrics: [string, string][] = [
+  ['10–15h', 'recuperadas / semana'],
+  ['2–4 sem', 'de implementación'],
+  ['0', 'despidos requeridos'],
+];
+
+export function ValueSection() {
+  return (
+    <section
+      className="relative py-24 md:py-32 px-6 md:px-10 overflow-hidden"
+      style={{
+        background:
+          'linear-gradient(180deg, hsla(35,15%,10%,.55) 0%, hsla(20,15%,8%,.85) 100%)',
+        backdropFilter: 'blur(8px)',
+        WebkitBackdropFilter: 'blur(8px)',
+      }}
+    >
+      <div className="section-sep absolute top-0 inset-x-0" />
+      <div className="max-w-3xl mx-auto text-center">
+        <span className="reveal inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
+          — Mi propuesta
+        </span>
+        <h2 className="reveal text-4xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
+          No vendo tecnología. <br />
+          <span className="text-primary">Vendo tiempo devuelto.</span>
+        </h2>
+        <p className="reveal mt-7 text-foreground/70 text-lg font-light leading-relaxed text-pretty">
+          Me especializo en identificar los 2 o 3 procesos donde tu equipo pierde más horas y
+          convertirlos en flujos automatizados con IA — sin reemplazar a nadie, sin cambiar sistemas
+          completos, sin meses de implementación.
+        </p>
+
+        <div
+          className="reveal relative mt-12 text-left rounded-r-lg p-7 md:p-8 border-l-4 border-primary card-glow"
+          style={{
+            background:
+              'linear-gradient(90deg, hsla(35,85%,55%,.12), hsla(35,85%,55%,.02) 80%)',
+          }}
+        >
+          <div className="absolute -left-[2px] top-0 bottom-0 w-px bg-primary/60" />
+          <p className="text-[10.5px] uppercase tracking-[0.22em] text-primary/90 mb-3">
+            Resultado típico
+          </p>
+          <p className="text-foreground font-semibold text-xl md:text-2xl leading-snug text-balance">
+            10 a 15 horas semanales recuperadas por persona, en tareas concretas y medibles.
+          </p>
+          <div className="mt-6 grid grid-cols-3 gap-4 pt-5 border-t border-white/5">
+            {metrics.map(([n, l], i) => (
+              <div key={i}>
+                <div className="text-primary text-2xl md:text-3xl font-semibold tracking-tight">
+                  {n}
+                </div>
+                <div className="text-[10.5px] uppercase tracking-[0.22em] text-muted-foreground mt-1">
+                  {l}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="section-sep absolute bottom-0 inset-x-0" />
+    </section>
+  );
+}
