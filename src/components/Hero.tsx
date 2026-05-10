@@ -39,7 +39,9 @@ export function Hero() {
 
             <div style={{ animationDelay: '.6s' }} className="mt-9 flex flex-wrap items-center gap-4">
               <a
-                href="#contacto"
+                href="https://calendly.com/davehrenfe/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-amber inline-flex items-center gap-2 px-8 py-4 rounded-sm font-semibold text-[15px]"
               >
                 Quiero recuperar esas horas
