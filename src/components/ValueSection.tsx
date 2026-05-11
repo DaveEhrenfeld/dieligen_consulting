@@ -57,6 +57,30 @@ export function ValueSection() {
             ))}
           </div>
         </div>
+
+        {/* Anticipation block */}
+        <div className="reveal mt-10 text-left space-y-5">
+          <p className="text-foreground/70 text-lg font-light leading-relaxed text-pretty">
+            La mayoría de los reportes en empresas medianas muestran el pasado. Lo que construyo
+            contigo son señales que anticipan el futuro para poder gestionar:
+          </p>
+          <ul className="space-y-3">
+            {[
+              'Un cliente con patrón de abandono.',
+              'Cómo ofertar mejores precios en base a lo que ha hecho la competencia.',
+              'Una alerta de quiebre de stock antes de que ocurra.',
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-3">
+                <span className="mt-2 w-1 h-1 rounded-full bg-primary flex-shrink-0" />
+                <span className="text-foreground/75 text-[17px] font-light leading-relaxed">{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-foreground font-semibold text-lg md:text-xl tracking-tight pt-2">
+            No gestión reactiva.{' '}
+            <span className="text-primary">Inteligencia anticipada.</span>
+          </p>
+        </div>
       </div>
       <div className="section-sep absolute bottom-0 inset-x-0" />
     </section>
