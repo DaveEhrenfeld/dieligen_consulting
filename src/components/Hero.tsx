@@ -7,7 +7,7 @@ export function Hero() {
 
       {/* content */}
       <div className="absolute inset-0 z-[3] flex">
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-10 flex items-end pb-14 md:pb-20">
+        <div className="w-full max-w-7xl mx-auto px-6 md:px-10 flex items-start md:items-center pt-24 md:pt-0 pb-8 md:pb-0">
           <div className="max-w-2xl hero-stagger">
             <span
               style={{ animationDelay: '.1s' }}
