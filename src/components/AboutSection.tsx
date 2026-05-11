@@ -47,7 +47,7 @@ export function AboutSection() {
 
         <div className="reveal mt-6">
           <a
-            href="https://www.linkedin.com/feed?nis=true"
+            href="https://www.linkedin.com/in/dehrenfeld/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary transition-colors border-b border-muted-foreground/30 hover:border-primary pb-1"
