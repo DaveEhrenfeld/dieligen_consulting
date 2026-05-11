@@ -3,6 +3,8 @@ const cards = [
   'Los datos están en tres Excel distintos y nadie los cruza porque toma demasiado tiempo.',
   'Sabemos que hay información valiosa ahí, pero nunca llegamos a analizarla en serio.',
   'La gente hace bien su trabajo, pero pierde horas en tareas que deberían ser automáticas.',
+  'Nuestros reportes siempre muestran lo que ya pasó. Para cuando reaccionamos, ya es tarde.',
+  'Cada área maneja sus propios datos y nunca tenemos una vista completa del negocio.',
 ];
 
 export function ProblemSection() {
