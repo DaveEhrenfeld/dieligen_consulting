@@ -6,6 +6,7 @@ import { ValueSection } from './components/ValueSection';
 import { HowSection } from './components/HowSection';
 import { ForWhomSection } from './components/ForWhomSection';
 import { AboutSection } from './components/AboutSection';
+import { PricingSection } from './components/PricingSection';
 import { FinalCta } from './components/FinalCta';
 import { Footer } from './components/Footer';
 import { useReveal } from './hooks/useReveal';
@@ -23,6 +24,7 @@ function App() {
         <HowSection />
         <ForWhomSection />
         <AboutSection />
+        <PricingSection />
         <FinalCta />
         <Footer />
       </main>

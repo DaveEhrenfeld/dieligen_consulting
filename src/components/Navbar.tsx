@@ -5,6 +5,7 @@ const links: [string, string][] = [
   ['Cómo funciona', '#como-funciona'],
   ['Para quién', '#para-quien'],
   ['Sobre mí', '#sobre-mi'],
+  ['Inversión', '#pricing'],
   ['Contacto', '#contacto'],
 ];
 
