@@ -60,8 +60,7 @@ export function PricingSection() {
             ¿Cuánto cuesta y cuánto retorna?
           </h2>
           <p className="mt-5 text-foreground/60 font-light max-w-xl mx-auto text-pretty">
-            Mueve el slider para explorar distintos escenarios. Basado en una persona con sueldo
-            de $1.500.000 mensuales y una UF de $40.500.
+            Mueve el slider para explorar distintos escenarios y cómo se rentabiliza esta consultoría.
           </p>
         </div>
 
@@ -165,11 +164,14 @@ export function PricingSection() {
               </span>
             </div>
           </div>
+          <p className="mt-4 text-[11px] text-muted-foreground/50 font-light">
+            Basado en una persona con sueldo de $1.500.000 mensuales
+          </p>
         </div>
 
         {/* Fine print */}
         <p className="reveal mt-6 text-center text-[11px] text-muted-foreground/60 font-light">
-          Cálculo referencial · UF fija a $40.500 · Sueldo base $1.500.000 · 176 horas hábiles al mes
+          Cálculo referencial · 176 horas hábiles al mes
         </p>
       </div>
 
