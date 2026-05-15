@@ -28,7 +28,7 @@ export function FinalCta() {
           <span className="text-primary">esta semana</span>?
         </h2>
         <p className="reveal mt-6 text-foreground/70 text-lg md:text-xl font-light text-pretty">
-          Conversemos 30 minutos. Te digo qué proceso atacaría primero y por qué.
+          Conversemos 30 minutos. Te digo qué proceso optimizaría primero y por qué.
         </p>
         <div className="reveal mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">
           <a

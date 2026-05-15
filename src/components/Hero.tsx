@@ -34,7 +34,7 @@ export function Hero() {
             >
               Ayudo a empresas medianas en Chile a automatizar los procesos que más tiempo
               consumen: reportes, análisis en Excel, datos dispersos, sin proyectos grandes ni
-              cambios traumáticos.
+              alterar lo que ya funciona.
             </p>
 
             <div style={{ animationDelay: '.6s' }} className="mt-9 flex flex-wrap items-center gap-4">

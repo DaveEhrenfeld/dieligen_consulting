@@ -30,6 +30,25 @@ export function ValueSection() {
           completos, sin meses de implementación.
         </p>
 
+        {/* Important but not urgent block */}
+        <div className="reveal mt-10 text-left space-y-4">
+          <p className="text-foreground/70 text-lg font-light leading-relaxed text-pretty">
+            Hay una razón por la que esto rara vez ocurre solo: integrar datos y anticipar decisiones
+            es siempre <span className="text-foreground/90 font-medium">importante</span> — pero casi
+            nunca <span className="text-foreground/90 font-medium">urgente</span>. Y lo urgente siempre gana.
+          </p>
+          <p className="text-foreground/70 text-lg font-light leading-relaxed text-pretty">
+            El equipo atiende los incendios del día. Nadie tiene tiempo para construir el sistema que
+            los prevendría. Así, las empresas siguen operando en base a la urgencia — con personas
+            altamente capaces dedicadas a tareas que deberían estar automatizadas.
+          </p>
+          <p className="text-foreground/85 text-lg font-light leading-relaxed text-pretty">
+            Lo que construyo contigo convierte ese cuadrante postergado en procesos automáticos: menos
+            tiempo alimentando reportes, más tiempo en{' '}
+            <span className="text-primary font-medium">conversaciones de negocio que realmente mueven la aguja</span>.
+          </p>
+        </div>
+
         <div
           className="reveal relative mt-12 text-left rounded-r-lg p-7 md:p-8 border-l-4 border-primary card-glow"
           style={{
