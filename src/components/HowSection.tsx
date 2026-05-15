@@ -34,10 +34,10 @@ export function HowSection() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto reveal">
           <span className="inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
-            — El proceso
+            El proceso
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
-            Así funciona, sin complicaciones.
+            Así funciona en la práctica.
           </h2>
         </div>
 
@@ -63,9 +63,13 @@ export function HowSection() {
                 <p className="mt-3 text-muted-foreground font-light text-[15.5px] leading-relaxed text-pretty">
                   {s.d}
                 </p>
-                <p className="mt-5 text-[10.5px] uppercase tracking-[0.22em] text-primary/70">
-                  {s.meta}
-                </p>
+                {/* Highlighted badge */}
+                <div className="mt-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10">
+                  <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-primary font-medium">
+                    {s.meta}
+                  </span>
+                </div>
               </div>
             ))}
           </div>

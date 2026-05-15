@@ -20,7 +20,7 @@ export function ForWhomSection() {
       <div className="max-w-4xl mx-auto">
         <div className="reveal">
           <span className="inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
-            — Encaje
+            Encaje
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
             Es para ti si...

@@ -21,7 +21,7 @@ export function FinalCta() {
 
       <div className="relative max-w-3xl mx-auto text-center">
         <span className="reveal inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
-          — Próximo paso
+          Próximo paso
         </span>
         <h2 className="reveal text-4xl md:text-6xl font-bold tracking-tight text-foreground text-balance leading-[1.04]">
           ¿Cuántas horas pierde tu equipo{' '}

@@ -18,7 +18,7 @@ export function ValueSection() {
       <div className="section-sep absolute top-0 inset-x-0" />
       <div className="max-w-3xl mx-auto text-center">
         <span className="reveal inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
-          — Mi propuesta
+          Mi propuesta
         </span>
         <h2 className="reveal text-4xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
           No vendo tecnología. <br />
@@ -26,7 +26,7 @@ export function ValueSection() {
         </h2>
         <p className="reveal mt-7 text-foreground/70 text-lg font-light leading-relaxed text-pretty">
           Me especializo en identificar los 2 o 3 procesos donde tu equipo pierde más horas y
-          convertirlos en flujos automatizados con IA — sin reemplazar a nadie, sin cambiar sistemas
+          convertirlos en flujos automatizados con IA, sin reemplazar a nadie, sin cambiar sistemas
           completos, sin meses de implementación.
         </p>
 
@@ -34,12 +34,12 @@ export function ValueSection() {
         <div className="reveal mt-10 text-left space-y-4">
           <p className="text-foreground/70 text-lg font-light leading-relaxed text-pretty">
             Hay una razón por la que esto rara vez ocurre solo: integrar datos y anticipar decisiones
-            es siempre <span className="text-foreground/90 font-medium">importante</span> — pero casi
+            es siempre <span className="text-foreground/90 font-medium">importante</span>, pero casi
             nunca <span className="text-foreground/90 font-medium">urgente</span>. Y lo urgente siempre gana.
           </p>
           <p className="text-foreground/70 text-lg font-light leading-relaxed text-pretty">
             El equipo atiende los incendios del día. Nadie tiene tiempo para construir el sistema que
-            los prevendría. Así, las empresas siguen operando en base a la urgencia — con personas
+            los prevendría. Así, las empresas siguen operando en base a la urgencia, con personas
             altamente capaces dedicadas a tareas que deberían estar automatizadas.
           </p>
           <p className="text-foreground/85 text-lg font-light leading-relaxed text-pretty">

@@ -1,5 +1,5 @@
 const paragraphs = [
-  'Llevo más de 10 años trabajando en empresas de tecnología y software B2B en Chile y Latinoamérica — en áreas de operaciones, éxito de clientes y adopción de herramientas digitales.',
+  'Llevo más de 10 años trabajando en empresas de tecnología y software B2B en Chile y Latinoamérica, en áreas de operaciones, éxito de clientes y adopción de herramientas digitales.',
   'Vi de cerca cómo las empresas grandes automatizan procesos que las medianas siguen haciendo a mano. Y decidí hacer algo al respecto.',
   'No soy una agencia ni una consultora de 20 personas. Soy alguien que entiende tu negocio, habla tu idioma y te ayuda a dar el primer paso bien dado.',
 ];
@@ -19,7 +19,7 @@ export function AboutSection() {
       <div className="max-w-3xl mx-auto">
         <div className="reveal">
           <span className="inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
-            — Sobre mí
+            Sobre mí
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
             ¿Quién está detrás de esto?

@@ -29,7 +29,7 @@ export function ProblemSection() {
       <div className="max-w-6xl mx-auto relative">
         <div className="text-center max-w-2xl mx-auto reveal">
           <span className="inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
-            — El día a día
+            El día a día
           </span>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground tracking-tight text-balance">
             ¿Te suena familiar?
