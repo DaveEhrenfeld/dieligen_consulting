@@ -6,7 +6,6 @@ const links: [string, string][] = [
   ['Para quién', '#para-quien'],
   ['Sobre mí', '#sobre-mi'],
   ['Inversión', '#pricing'],
-  ['Contacto', '#contacto'],
 ];
 
 export function Navbar() {
@@ -51,7 +50,7 @@ export function Navbar() {
             href="#contacto"
             className="btn-amber hidden sm:inline-flex items-center text-[11px] uppercase tracking-[0.22em] font-semibold rounded-sm px-4 py-2.5"
           >
-            ¿Sirve para mi empresa?
+            Diagnóstico gratis
           </a>
           <button
             onClick={() => setOpen((o) => !o)}
@@ -95,7 +94,7 @@ export function Navbar() {
             onClick={() => setOpen(false)}
             className="btn-amber inline-flex items-center justify-center text-[11px] uppercase tracking-[0.22em] font-semibold rounded-sm px-4 py-3"
           >
-            ¿Sirve para mi empresa?
+            Diagnóstico gratis
           </a>
         </div>
       </div>
