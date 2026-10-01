@@ -51,7 +51,7 @@ export function Navbar() {
             href="#contacto"
             className="btn-amber hidden sm:inline-flex items-center text-[11px] uppercase tracking-[0.22em] font-semibold rounded-sm px-4 py-2.5"
           >
-            Agendar llamada
+            ¿Sirve para mi empresa?
           </a>
           <button
             onClick={() => setOpen((o) => !o)}
@@ -95,7 +95,7 @@ export function Navbar() {
             onClick={() => setOpen(false)}
             className="btn-amber inline-flex items-center justify-center text-[11px] uppercase tracking-[0.22em] font-semibold rounded-sm px-4 py-3"
           >
-            Agendar llamada
+            ¿Sirve para mi empresa?
           </a>
         </div>
       </div>
