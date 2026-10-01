@@ -13,6 +13,7 @@ const PAIN_LABELS: Record<string, string> = {
   coordinacion: 'Coordinación de tareas y proyectos',
   presentaciones: 'Preparar presentaciones e informes',
   informacion: 'Información dispersa entre sistemas',
+  otro: 'Otro',
 };
 
 const SIZE_LABELS: Record<string, string> = {
@@ -27,26 +28,32 @@ const URGENCY_LABELS: Record<string, string> = {
   explorando: 'Solo explorando',
 };
 
-function leadEmail(name: string, pain: string, urgency: string): string {
+function formatPainList(pain: string[], painOther: string): string {
+  return pain
+    .map((p) => (p === 'otro' && painOther ? `Otro: ${painOther}` : PAIN_LABELS[p] ?? p))
+    .join(', ');
+}
+
+function leadEmail(name: string, pain: string[], painOther: string, urgency: string): string {
   const firstName = name.split(' ')[0];
-  const painLabel = PAIN_LABELS[pain] ?? pain;
+  const painSummary = formatPainList(pain, painOther);
 
   if (urgency === 'ahora') {
     return `<p>Hola ${firstName},</p>
-<p>Recibí tu mensaje. Vi que tienes urgencia real por resolver <strong>${painLabel}</strong> — es exactamente el tipo de problema que trabajo.</p>
+<p>Recibí tu mensaje. Vi que tienes urgencia real por resolver: <strong>${painSummary}</strong> — es exactamente el tipo de problema que trabajo.</p>
 <p>Te contactaré en las próximas horas para coordinar una llamada breve y entender tu situación en detalle.</p>
 <p>Saludos,<br/>David Ehrenfeld<br/>Dieligen Consulting</p>`;
   }
 
   if (urgency === 'evaluando') {
     return `<p>Hola ${firstName},</p>
-<p>Gracias por tomarte el tiempo. Con base en tu situación — <strong>${painLabel}</strong> — puedo darte ideas concretas antes de que tomes cualquier decisión.</p>
+<p>Gracias por tomarte el tiempo. Con base en tu situación — <strong>${painSummary}</strong> — puedo darte ideas concretas antes de que tomes cualquier decisión.</p>
 <p>Me pondré en contacto pronto para conversar sin presiones.</p>
 <p>Saludos,<br/>David Ehrenfeld<br/>Dieligen Consulting</p>`;
   }
 
   return `<p>Hola ${firstName},</p>
-<p>Gracias por el interés. Si en algún momento el tema de <strong>${painLabel}</strong> se vuelve más urgente, aquí estaré.</p>
+<p>Gracias por el interés. Si en algún momento el tema de <strong>${painSummary}</strong> se vuelve más urgente, aquí estaré.</p>
 <p>Cualquier pregunta, solo responde este correo.</p>
 <p>Saludos,<br/>David Ehrenfeld<br/>Dieligen Consulting</p>`;
 }
@@ -55,7 +62,8 @@ function notificationEmail(data: {
   name: string;
   email: string;
   size: string;
-  pain: string;
+  pain: string[];
+  painOther: string;
   urgency: string;
 }): string {
   const urgencyBadge =
@@ -70,7 +78,7 @@ function notificationEmail(data: {
   <tr><td style="padding:8px 0;color:#888;font-size:13px">Nombre</td><td style="padding:8px 0;font-weight:600">${data.name}</td></tr>
   <tr><td style="padding:8px 0;color:#888;font-size:13px">Email</td><td style="padding:8px 0"><a href="mailto:${data.email}">${data.email}</a></td></tr>
   <tr><td style="padding:8px 0;color:#888;font-size:13px">Tamaño empresa</td><td style="padding:8px 0">${SIZE_LABELS[data.size] ?? data.size}</td></tr>
-  <tr><td style="padding:8px 0;color:#888;font-size:13px">Dolor principal</td><td style="padding:8px 0">${PAIN_LABELS[data.pain] ?? data.pain}</td></tr>
+  <tr><td style="padding:8px 0;color:#888;font-size:13px">Dolores</td><td style="padding:8px 0">${formatPainList(data.pain, data.painOther)}</td></tr>
   <tr><td style="padding:8px 0;color:#888;font-size:13px">Urgencia</td><td style="padding:8px 0">${URGENCY_LABELS[data.urgency] ?? data.urgency}</td></tr>
   <tr><td style="padding:8px 0;color:#888;font-size:13px">Recibido</td><td style="padding:8px 0">${new Date().toLocaleString('es-CL', { timeZone: 'America/Santiago' })}</td></tr>
 </table>`;
@@ -79,9 +87,9 @@ function notificationEmail(data: {
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'POST') return res.status(405).send('Method Not Allowed');
 
-  const { name, email, size, pain, urgency } = req.body ?? {};
+  const { name, email, size, pain, painOther = '', urgency } = req.body ?? {};
 
-  if (!name || !email || !size || !pain || !urgency) {
+  if (!name || !email || !size || !Array.isArray(pain) || pain.length === 0 || !urgency) {
     return res.status(400).json({ error: 'Faltan campos requeridos' });
   }
 
@@ -94,13 +102,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       from: FROM_EMAIL,
       to: DAVID_EMAIL,
       subject: `Nuevo lead: ${name} (${URGENCY_LABELS[urgency] ?? urgency})`,
-      html: notificationEmail({ name, email, size, pain, urgency }),
+      html: notificationEmail({ name, email, size, pain, painOther, urgency }),
     }),
     resend.emails.send({
       from: FROM_EMAIL,
       to: email,
       subject: 'Recibí tu mensaje — Dieligen Consulting',
-      html: leadEmail(name, pain, urgency),
+      html: leadEmail(name, pain, painOther, urgency),
     }),
   ]);
 

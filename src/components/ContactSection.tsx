@@ -6,7 +6,8 @@ type Status = 'idle' | 'loading' | 'success' | 'error';
 
 interface FormData {
   size: string;
-  pain: string;
+  pain: string[];
+  painOther: string;
   urgency: string;
   name: string;
   email: string;
@@ -26,6 +27,7 @@ const PAIN_OPTIONS = [
   { value: 'coordinacion', label: 'Coordinación de tareas y proyectos' },
   { value: 'presentaciones', label: 'Preparar presentaciones e informes' },
   { value: 'informacion', label: 'Información dispersa entre sistemas' },
+  { value: 'otro', label: 'Otro — lo escribo abajo' },
 ];
 
 const URGENCY_OPTIONS = [
@@ -35,7 +37,7 @@ const URGENCY_OPTIONS = [
 ];
 
 // ── Sub-components ────────────────────────────────────────────────────────────
-function OptionButton({
+function RadioButton({
   selected,
   onClick,
   children,
@@ -56,11 +58,44 @@ function OptionButton({
     >
       <span
         className={`inline-block w-3 h-3 rounded-full border mr-3 flex-shrink-0 align-middle transition-colors ${
-          selected
-            ? 'border-primary bg-primary'
-            : 'border-white/30'
+          selected ? 'border-primary bg-primary' : 'border-white/30'
         }`}
       />
+      {children}
+    </button>
+  );
+}
+
+function CheckButton({
+  selected,
+  onClick,
+  children,
+}: {
+  selected: boolean;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      className={`w-full text-left px-5 py-3.5 rounded-md border text-sm transition-all duration-200 ${
+        selected
+          ? 'border-primary/60 bg-primary/10 text-foreground'
+          : 'border-white/10 bg-white/[0.02] text-foreground/70 hover:border-white/20 hover:text-foreground'
+      }`}
+    >
+      <span
+        className={`inline-flex items-center justify-center w-3.5 h-3.5 rounded-sm border mr-3 flex-shrink-0 align-middle transition-colors ${
+          selected ? 'border-primary bg-primary' : 'border-white/30'
+        }`}
+      >
+        {selected && (
+          <svg viewBox="0 0 10 8" fill="none" className="w-2 h-2">
+            <path d="M1 4l2.5 2.5L9 1" stroke="hsl(20 15% 8%)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        )}
+      </span>
       {children}
     </button>
   );
@@ -86,7 +121,7 @@ function StepDots({ current, total }: { current: number; total: number }) {
 }
 
 // ── Main Component ────────────────────────────────────────────────────────────
-const EMPTY: FormData = { size: '', pain: '', urgency: '', name: '', email: '' };
+const EMPTY: FormData = { size: '', pain: [], painOther: '', urgency: '', name: '', email: '' };
 
 export function ContactSection() {
   const [step, setStep] = useState<Step>(1);
@@ -94,9 +129,22 @@ export function ContactSection() {
   const [status, setStatus] = useState<Status>('idle');
   const [errorMsg, setErrorMsg] = useState('');
 
+  function togglePain(value: string) {
+    setData((d) => ({
+      ...d,
+      pain: d.pain.includes(value)
+        ? d.pain.filter((p) => p !== value)
+        : [...d.pain, value],
+    }));
+  }
+
+  const painValid =
+    data.pain.length > 0 &&
+    (!data.pain.includes('otro') || data.painOther.trim().length > 0);
+
   const canNext =
     (step === 1 && data.size !== '') ||
-    (step === 2 && data.pain !== '') ||
+    (step === 2 && painValid) ||
     (step === 3 && data.urgency !== '') ||
     step === 4;
 
@@ -122,7 +170,7 @@ export function ContactSection() {
     return (
       <section id="contacto" className="relative py-24 md:py-32 px-6 md:px-10">
         <div className="section-sep absolute top-0 inset-x-0" />
-        <div className="max-w-xl mx-auto text-center reveal in">
+        <div className="max-w-xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-full border border-primary/40 bg-primary/10 mb-6">
             <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-primary" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
@@ -144,26 +192,35 @@ export function ContactSection() {
   return (
     <section
       id="contacto"
-      className="relative py-24 md:py-32 px-6 md:px-10 overflow-hidden"
+      className="relative py-24 md:py-36 px-6 md:px-10 overflow-hidden"
       style={{
         background:
-          'linear-gradient(180deg, hsla(20,15%,8%,.55) 0%, hsla(20,15%,8%,.88) 50%, hsla(20,15%,8%,.55) 100%)',
+          'linear-gradient(180deg, hsla(20,15%,8%,.7) 0%, hsla(35,30%,12%,.9) 50%, hsla(20,15%,8%,.7) 100%)',
         backdropFilter: 'blur(8px)',
         WebkitBackdropFilter: 'blur(8px)',
       }}
     >
-      <div className="section-sep absolute top-0 inset-x-0" />
+      {/* Amber glow */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(50% 60% at 50% 100%, hsla(35,85%,55%,.13), transparent 70%)',
+        }}
+      />
+      <div className="absolute inset-x-0 top-0 amber-rule h-px" />
 
-      <div className="max-w-xl mx-auto">
+      <div className="relative max-w-xl mx-auto">
         <div className="text-center reveal mb-10">
           <span className="inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
             Contacto
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
-            Cuéntame tu situación
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground text-balance leading-[1.06]">
+            Cuéntame qué le{' '}
+            <span className="text-primary">quita tiempo</span>{' '}
+            a tu equipo
           </h2>
           <p className="mt-5 text-foreground/60 font-light text-pretty">
-            Tres preguntas rápidas para entender si puedo ayudarte y cómo.
+            Tres preguntas para entender tu situación y decirte si puedo ayudarte.
           </p>
         </div>
 
@@ -179,35 +236,45 @@ export function ContactSection() {
                 </p>
                 <div className="flex flex-col gap-3">
                   {SIZE_OPTIONS.map((o) => (
-                    <OptionButton
+                    <RadioButton
                       key={o.value}
                       selected={data.size === o.value}
                       onClick={() => setData((d) => ({ ...d, size: o.value }))}
                     >
                       {o.label}
-                    </OptionButton>
+                    </RadioButton>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* Step 2 — Main pain */}
+            {/* Step 2 — Pain (multi-select) */}
             {step === 2 && (
               <div>
-                <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-5">
-                  ¿Qué proceso te quita más tiempo hoy?
+                <p className="text-[11px] uppercase tracking-[0.22em] text-muted-foreground mb-1">
+                  ¿Qué procesos te quitan más tiempo? <span className="normal-case tracking-normal opacity-60">(puedes elegir varios)</span>
                 </p>
+                <p className="text-xs text-muted-foreground/50 mb-5">Selecciona todos los que apliquen</p>
                 <div className="flex flex-col gap-3">
                   {PAIN_OPTIONS.map((o) => (
-                    <OptionButton
+                    <CheckButton
                       key={o.value}
-                      selected={data.pain === o.value}
-                      onClick={() => setData((d) => ({ ...d, pain: o.value }))}
+                      selected={data.pain.includes(o.value)}
+                      onClick={() => togglePain(o.value)}
                     >
                       {o.label}
-                    </OptionButton>
+                    </CheckButton>
                   ))}
                 </div>
+                {data.pain.includes('otro') && (
+                  <textarea
+                    placeholder="Describe brevemente el proceso..."
+                    value={data.painOther}
+                    onChange={(e) => setData((d) => ({ ...d, painOther: e.target.value }))}
+                    rows={3}
+                    className="mt-4 w-full px-5 py-3.5 rounded-md border border-white/10 bg-white/[0.02] text-foreground placeholder:text-muted-foreground/50 text-sm focus:outline-none focus:border-primary/50 transition-colors resize-none"
+                  />
+                )}
               </div>
             )}
 
@@ -219,13 +286,13 @@ export function ContactSection() {
                 </p>
                 <div className="flex flex-col gap-3">
                   {URGENCY_OPTIONS.map((o) => (
-                    <OptionButton
+                    <RadioButton
                       key={o.value}
                       selected={data.urgency === o.value}
                       onClick={() => setData((d) => ({ ...d, urgency: o.value }))}
                     >
                       {o.label}
-                    </OptionButton>
+                    </RadioButton>
                   ))}
                 </div>
               </div>

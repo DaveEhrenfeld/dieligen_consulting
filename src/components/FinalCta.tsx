@@ -1,7 +1,6 @@
 export function FinalCta() {
   return (
     <section
-      id="contacto"
       className="relative py-28 md:py-36 px-6 md:px-10 overflow-hidden"
       style={{
         background:
@@ -28,16 +27,14 @@ export function FinalCta() {
           <span className="text-primary">esta semana</span>?
         </h2>
         <p className="reveal mt-6 text-foreground/70 text-lg md:text-xl font-light text-pretty">
-          Conversemos 30 minutos. Te digo qué proceso optimizaría primero y por qué.
+          Cuéntame tu situación. Te digo qué proceso optimizaría primero y por qué.
         </p>
         <div className="reveal mt-10 flex flex-col sm:flex-row gap-4 items-center justify-center">
           <a
-            href="https://calendly.com/davehrenfe/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contacto"
             className="btn-amber inline-flex items-center gap-2 px-10 py-5 rounded-sm font-semibold text-base"
           >
-            Agendar llamada gratuita →
+            Ir al formulario →
           </a>
           <a
             href="#top"
@@ -47,7 +44,7 @@ export function FinalCta() {
           </a>
         </div>
         <p className="reveal mt-8 text-xs text-muted-foreground uppercase tracking-[0.22em]">
-          30 min · Por videollamada · Sin compromiso
+          Sin compromiso · Respuesta en menos de 24 horas
         </p>
       </div>
     </section>
