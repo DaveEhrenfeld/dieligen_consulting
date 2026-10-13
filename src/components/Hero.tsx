@@ -14,7 +14,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 text-[10.5px] uppercase tracking-[0.22em] px-3 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-primary backdrop-blur-sm"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              Consultoría de IA para PyMEs en Chile
+              Consultoría de procesos a optimizar con IA para medianas empresas en Chile
             </span>
 
             <h1
