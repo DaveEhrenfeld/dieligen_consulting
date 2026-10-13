@@ -4,7 +4,7 @@ const team = [
     role: 'Fundador, Dieligen Consulting',
     linkedin: 'https://www.linkedin.com/in/dehrenfeld/',
     bio: [
-      'Más de 15 años trabajando en tecnología y operaciones. Ha trabajado con empresas como LATAM Airlines y Accelya, multinacional estadounidense, implementando soluciones concretas que encajan con los procesos que los clientes ya llevan.',
+      'Más de 15 años trabajando en tecnología y operaciones. Ha trabajado con empresas como LATAM Airlines y Accelya, multinacional global con la que operó desde Estados Unidos, implementando soluciones tecnológicas que parten del conocimiento real de los procesos y datos de cada cliente.',
       'También pasó por el mundo startup, donde aprendió a lograr mucho con pocos recursos. Esa combinación, entender cómo operan las empresas que escalan y saber ejecutar sin desperdiciar, es lo que aplica hoy en Dieligen.',
       'Vio de cerca que las empresas medianas tienen los mismos problemas que las grandes, pero sin los recursos para resolverlos igual. Dieligen nació para cambiar eso.',
     ],
