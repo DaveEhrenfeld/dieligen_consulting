@@ -5,8 +5,8 @@ const team = [
     linkedin: 'https://www.linkedin.com/in/dehrenfeld/',
     bio: [
       'Más de 15 años trabajando en tecnología y operaciones. Ha trabajado con empresas como LATAM Airlines y Accelya, multinacional global con la que operó desde Estados Unidos, implementando soluciones tecnológicas que parten del conocimiento real de los procesos y datos de cada cliente.',
-      'También pasó por el mundo startup, donde aprendió a lograr mucho con pocos recursos. Esa combinación, entender cómo operan las empresas que escalan y saber ejecutar sin desperdiciar, es lo que aplica hoy en Dieligen.',
-      'Vio de cerca que las empresas medianas tienen los mismos problemas que las grandes, pero sin los recursos para resolverlos igual. Dieligen nació para cambiar eso.',
+      'También pasó por el mundo startup, donde aprendió a lograr mucho con pocos recursos. Esa combinación, entender cómo operan las empresas que escalan y saber ejecutar sin desperdiciar.',
+      'Vio de cerca que las empresas medianas tienen los mismos problemas que las grandes, pero sin los recursos para resolverlos igual. Dieligen la fundó para cambiar eso.',
     ],
   },
   {
@@ -57,31 +57,31 @@ export function AboutSection() {
               key={person.name}
               className="reveal rounded-lg p-7 md:p-8 border border-white/10 bg-white/[0.03]"
             >
-              <div className="space-y-4 mb-6">
-                {person.bio.map((p, i) => (
-                  <p key={i} className="text-foreground/75 font-light leading-relaxed text-pretty">
-                    {p}
-                  </p>
-                ))}
-              </div>
-
-              <div className="pt-5 border-t border-white/8">
-                <div className="flex items-center gap-3 mb-3">
+              <div className="pb-5 mb-6 border-b border-white/8">
+                <div className="flex items-center gap-3 mb-2">
                   <div className="w-8 h-px bg-primary" />
                   <p className="text-foreground font-semibold text-sm">{person.name}</p>
                 </div>
-                <p className="text-muted-foreground text-xs uppercase tracking-[0.18em] mb-4 pl-11">
+                <p className="text-muted-foreground text-xs uppercase tracking-[0.18em] mb-3 pl-11">
                   {person.role}
                 </p>
                 <a
                   href={person.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary transition-colors border-b border-muted-foreground/30 hover:border-primary pb-1"
+                  className="pl-11 inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary transition-colors border-b border-muted-foreground/30 hover:border-primary pb-1"
                 >
                   <LinkedInIcon />
                   Ver perfil en LinkedIn
                 </a>
+              </div>
+
+              <div className="space-y-4">
+                {person.bio.map((p, i) => (
+                  <p key={i} className="text-foreground/75 font-light leading-relaxed text-pretty">
+                    {p}
+                  </p>
+                ))}
               </div>
             </div>
           ))}
