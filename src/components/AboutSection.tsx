@@ -4,8 +4,9 @@ const team = [
     role: 'Fundador, Dieligen Consulting',
     linkedin: 'https://www.linkedin.com/in/dehrenfeld/',
     bio: [
-      'Más de 10 años trabajando en empresas de tecnología y software B2B en Chile y Latinoamérica, en operaciones, éxito de clientes y adopción de herramientas digitales.',
-      'Vi de cerca cómo las empresas grandes automatizan procesos que las medianas siguen haciendo a mano. Y decidí hacer algo al respecto.',
+      'Más de 15 años trabajando en tecnología y operaciones. Dentro de LATAM Airlines lideró el desarrollo de procesos y soporte tecnológico para el Centro de Control Operacional, traduciendo necesidades reales del negocio en soluciones concretas con el equipo de TI. Luego en Accelya, multinacional con sede en Estados Unidos, trabajó con aerolíneas de todo el continente para implementar soluciones que encajaran en cómo ya llevaban sus procesos.',
+      'También pasó por el mundo startup, donde aprendió a lograr mucho con pocos recursos. Esa combinación, entender cómo operan las empresas que escalan y saber ejecutar sin desperdiciar, es lo que aplica hoy en Dieligen.',
+      'Vio de cerca que las empresas medianas tienen los mismos problemas que las grandes, pero sin los recursos para resolverlos igual. Dieligen nació para cambiar eso.',
     ],
   },
   {
@@ -40,7 +41,7 @@ export function AboutSection() {
       <div className="max-w-5xl mx-auto">
         <div className="reveal mb-12">
           <span className="inline-block text-[10.5px] uppercase tracking-[0.22em] text-primary/80 mb-4">
-            El equipo
+            Equipo
           </span>
           <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-foreground text-balance">
             ¿Quiénes están detrás?
