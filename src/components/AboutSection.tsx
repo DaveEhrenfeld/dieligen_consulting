@@ -69,7 +69,7 @@ export function AboutSection() {
                   href={person.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pl-11 inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary transition-colors border-b border-muted-foreground/30 hover:border-primary pb-1"
+                  className="pl-11 inline-flex items-center gap-2.5 text-[11px] uppercase tracking-[0.22em] text-muted-foreground hover:text-primary transition-colors"
                 >
                   <LinkedInIcon />
                   Ver perfil en LinkedIn
