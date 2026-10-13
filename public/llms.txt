@@ -1,0 +1,31 @@
+# Dieligen Consulting
+
+## Qué es
+Dieligen es una consultora chilena que ayuda a empresas de 50 a 200 personas a eliminar trabajo manual integrando IA en las herramientas que ya usan: copilotos para sus equipos, no reemplazos.
+
+## Problema que resuelve
+Muchas empresas medianas en Chile pierden horas cada semana en tareas manuales repetitivas: reportes en Excel, datos dispersos entre sistemas, seguimiento de clientes, coordinación de proyectos. Dieligen automatiza esos procesos sin proyectos grandes ni cambios disruptivos.
+
+## Quiénes están detrás
+- **David Ehrenfeld** (Fundador): más de 15 años en tecnología y operaciones. Ha trabajado con LATAM Airlines y Accelya. LinkedIn: https://www.linkedin.com/in/dehrenfeld/
+- **Marcelo Dujovne** (Partner, estrategia y personas): consultor con más de 20 años en transformación organizacional y RRHH estratégico. Ha trabajado con Nestlé y AAXIS. LinkedIn: https://www.linkedin.com/in/marcelo-dujovne/
+
+## Servicios
+- Diagnóstico de procesos: identificamos qué consume más tiempo y qué se puede automatizar
+- Implementación de copilotos de IA en herramientas existentes (Excel, correo, ERP, CRM)
+- Automatización de reportes, análisis de datos y flujos de información
+- Acompañamiento en adopción para que el equipo use las herramientas de verdad
+
+## Para quién
+Empresas chilenas de 50 a 200 personas con procesos manuales repetitivos. No reemplazamos personas ni hacemos proyectos de TI grandes.
+
+## Caso de referencia
+Arlab: reducción de 10 horas semanales en el equipo que analiza y postula a nuevas licitaciones.
+
+## Postura
+Copilotear, no reemplazar. La IA trabaja con tu equipo, no en su lugar.
+
+## Contacto
+- Web: https://dieligen.cl
+- Email: contacto@dieligen.cl
+- Formulario: https://dieligen.cl/#contacto
